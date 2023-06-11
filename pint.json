@@ -1,0 +1,23 @@
+{
+    "preset": "psr12",
+    "exclude": [
+        "vendor",
+        "wordpress/wp-admin",
+        "wordpress/wp-includes",
+        "wordpress/wp-content/plugins",
+        "wordpress/wp-content/themes/lemmony",
+        "wordpress/wp-content/themes/twentytwentyone",
+        "wordpress/wp-content/themes/twentytwentythree",
+        "wordpress/wp-content/themes/twentytwentytwo",
+        "wordpress/wp-content/uploads"
+    ],
+    "notName": [
+        "wordpress/wp-*"
+    ],
+    "notPath": [
+        "wordpress/wp",
+        "wordpress/index.php",
+        "wordpress/xmlrpc.php",
+        "wordpress/wp-content/themes/index.php"
+    ]
+}
