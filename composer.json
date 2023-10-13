@@ -2,6 +2,7 @@
   "name": "thomasdiluccio/blog",
   "type": "project",
   "license": "MIT",
+  "minimum-stability":"stable",
   "repositories": [
     {
       "type": "composer",
