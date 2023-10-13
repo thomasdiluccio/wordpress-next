@@ -16,12 +16,12 @@
   ],
   "require": {
     "johnpbloch/wordpress-core-installer": "^2.0",
-    "johnpbloch/wordpress-core": "^6.2",
-    "wpackagist-theme/lemmony": "^1.2",
-    "wpackagist-plugin/lemmony-companion": "^1.0",
-    "wpackagist-plugin/jetpack": "^12.2",
-    "wpackagist-plugin/wordpress-seo": "^20.8",
-    "wpackagist-plugin/w3-total-cache": "^2.3",
+    "johnpbloch/wordpress-core": "^6.3",
+    "wpackagist-theme/lemmony": "^1.4",
+    "wpackagist-plugin/lemmony-companion": "^1.2",
+    "wpackagist-plugin/jetpack": "^12.7",
+    "wpackagist-plugin/wordpress-seo": "^21.3",
+    "wpackagist-plugin/w3-total-cache": "^2.5.0",
     "vlucas/phpdotenv": "^5.5"
   },
   "autoload": {
@@ -40,6 +40,9 @@
     ],
     "post-update-cmd": [
       "@auto-scripts"
+    ],
+    "post-create-project-cmd": [
+      "git init"
     ]
   },
   "extra": {

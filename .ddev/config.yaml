@@ -3,8 +3,8 @@ type: wordpress
 docroot: wordpress
 php_version: "8.2"
 webserver_type: nginx-fpm
-router_http_port: "80"
-router_https_port: "443"
+router_http_port: "8082"
+router_https_port: "4432"
 xdebug_enabled: false
 additional_hostnames: []
 additional_fqdns: []
