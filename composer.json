@@ -2,7 +2,7 @@
   "name": "thomasdiluccio/wordpress-next",
   "type": "project",
   "license": "MIT",
-  "minimum-stability":"stable",
+  "minimum-stability": "stable",
   "repositories": [
     {
       "type": "composer",
@@ -32,12 +32,17 @@
   },
   "scripts": {
     "setup-dotenv-file": [
-      "cp -n ./wordpress/.env.default ./wordpress/.env  2>/dev/null || :"
+      "cp -n ./.env.default ./.env  2>/dev/null || :"
+    ],
+    "setup-wp-files": [
+      "cp -n ./src/wp-config.php ./wordpress/  2>/dev/null || :",
+      "cp -nrf ./src/lemonade ./wordpress/wp-content/themes  2>/dev/null || :"
     ],
     "auto-scripts": {},
     "post-install-cmd": [
       "@auto-scripts",
-      "composer setup-dotenv-file"
+      "composer setup-dotenv-file",
+      "composer setup-wp-files"
     ],
     "post-update-cmd": [
       "@auto-scripts"
@@ -62,7 +67,7 @@
       "johnpbloch/wordpress-core-installer": true,
       "composer/installers": true
     },
-    "optimize-autoloader":true
+    "optimize-autoloader": true
   },
   "require-dev": {
     "szepeviktor/phpstan-wordpress": "^1.3",

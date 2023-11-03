@@ -5,10 +5,7 @@
         "wordpress/wp-admin",
         "wordpress/wp-includes",
         "wordpress/wp-content/plugins",
-        "wordpress/wp-content/themes/lemmony",
-        "wordpress/wp-content/themes/twentytwentyone",
-        "wordpress/wp-content/themes/twentytwentythree",
-        "wordpress/wp-content/themes/twentytwentytwo",
+        "wordpress/wp-content/themes",
         "wordpress/wp-content/uploads"
     ],
     "notName": [

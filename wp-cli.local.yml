@@ -1,0 +1,9 @@
+path: wordpress
+color: true
+# url: http://example.com
+# user: admin
+# disabled_commands:
+#   - db drop
+#   - plugin install
+require:
+  - src/commands/demo.php

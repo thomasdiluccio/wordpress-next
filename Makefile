@@ -3,8 +3,12 @@ phpstan:
 .PHONY: phpstan
 
 pint:
-	./vendor/bin/pint ./wordpress/wp-content/themes/my-theme
+	./vendor/bin/pint ./src/lemonade
 .PHONY: pint
+
+get-composer:
+	./src/get-composer.sh
+.PHONY: get-composer
 
 update-cli:
 	./wordpress/wp cli update
@@ -14,5 +18,5 @@ update-wp:
 	composer update
 .PHONY: update-wp
 
-update: update-cli update-wp
+update: update-cli update-wp get-composer
 .PHONY: update
