@@ -1,5 +1,6 @@
 # Ignore local configuration files.
 /.env
+/composer.lock
 
 # Ignore Composer packages.
 /vendor/

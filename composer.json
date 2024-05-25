@@ -17,12 +17,12 @@
   ],
   "require": {
     "johnpbloch/wordpress-core-installer": "^2.0",
-    "johnpbloch/wordpress-core": "^6.3",
-    "wpackagist-theme/lemmony": "^1.4",
+    "johnpbloch/wordpress-core": "^6.5",
+    "wpackagist-theme/lemmony": "^1.6",
     "wpackagist-plugin/lemmony-companion": "^1.2",
-    "wpackagist-plugin/jetpack": "^12.7",
-    "wpackagist-plugin/wordpress-seo": "^21.3",
-    "wpackagist-plugin/w3-total-cache": "^2.5.0",
+    "wpackagist-plugin/jetpack": "^13.0",
+    "wpackagist-plugin/wordpress-seo": "^22.0",
+    "wpackagist-plugin/w3-total-cache": "^2.7.0",
     "vlucas/phpdotenv": "^5.5"
   },
   "autoload": {
@@ -39,13 +39,32 @@
       "cp -nrf ./src/lemonade ./wordpress/wp-content/themes  2>/dev/null || :"
     ],
     "auto-scripts": {},
+    "store-uploads": [
+      "mkdir -p update",
+      "mkdir -p wordpress/wp-content/uploads",
+      "mv wordpress/wp-content/uploads update/"
+    ],
+    "restore-uploads": [
+      "mkdir -p wordpress/wp-content/uploads",
+      "mv update/uploads wordpress/wp-content/"
+    ],
+    "pre-install-cmd": [
+      "composer store-uploads"
+    ],
+    "pre-update-cmd": [
+      "rm -rf wordpress/wp-content/plugins/*",
+      "composer store-uploads"
+    ],
     "post-install-cmd": [
       "@auto-scripts",
       "composer setup-dotenv-file",
-      "composer setup-wp-files"
+      "composer setup-wp-files",
+      "composer restore-uploads"
     ],
     "post-update-cmd": [
-      "@auto-scripts"
+      "@auto-scripts",
+      "composer setup-wp-files",
+      "composer restore-uploads"
     ],
     "post-create-project-cmd": [
       "git init"
